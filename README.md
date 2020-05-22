@@ -6,10 +6,13 @@ In this example, I'll show you how to configure AWS Amplify Console using the AW
 
 This example enables the following configuration:
 
-- Connect to the page source repository in GitHub
-- Enable deployment from `master` branch
+- Connect to the page [source repository](https://github.com/nikovirtala/amplify-console-demo/) in GitHub
+- Enable deployment from `master` and `dev` branches
 - Enable feature branch preview deployments
 - Deploy artifacts from source repository root and subfolders
+- Configure custom domain `amplified.host`
+  - `master` branch: https://amplified.host
+  - `dev` branch: https://dev.amplified.host
 
 All this configuration is done on: `lib/aws-cdk-amplify-console-stack.ts`
 
@@ -38,6 +41,10 @@ In this example we use [aws-amplify CDK module](https://docs.aws.amazon.com/cdk/
 ### GitHub Actions
 
 ![](https://github.com/nikovirtala/aws-cdk-amplify-console/workflows/Deploy%20to%20AWS%20Amplify%20Console/badge.svg)
+
+## To-Do
+
+- [ ] Complete the GitHub Actions workflow
 
 ## Useful commands
 
