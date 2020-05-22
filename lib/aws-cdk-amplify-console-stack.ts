@@ -27,4 +27,5 @@ export class AwsCdkAmplifyConsoleStack extends cdk.Stack {
     });
 
     const master = amplifyApp.addBranch('master');
+  }
 }
