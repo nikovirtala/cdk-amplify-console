@@ -1,0 +1,8 @@
+name: Deploy to AWS Amplify Console
+
+on: [push]
+
+jobs:
+  build:
+    name: Synth and Deploy
+    runs-on: ubuntu-latest

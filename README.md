@@ -35,6 +35,10 @@ In my example we use Typescript, and the project was inited with the command: `c
 
 In this example we use [aws-amplify CDK module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-amplify-readme.html).
 
+### GitHub Actions
+
+![](https://github.com/nikovirtala/aws-cdk-amplify-console/workflows/Deploy%20to%20AWS%20Amplify%20Console/badge.svg)
+
 ## Useful commands
 
 - `npm run build` compile typescript to js
