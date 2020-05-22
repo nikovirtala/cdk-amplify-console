@@ -1,12 +1,39 @@
-# AWS Amplify Console with AWS CDK
+# Configure AWS Amplify Console with AWS CDK
 
-This is an example of configuring AWS Amplify Console deployment using AWS Cloud Development Kit (CDK).
+## TL;DR
 
-- [AWS Amplify Console](https://aws.amazon.com/amplify/console/)
-- [AWS Cloud Development Kit](https://docs.aws.amazon.com/cdk/index.html)
-- [aws-amplify CDK module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-amplify-readme.html)
+In this example, I'll show you how to configure AWS Amplify Console using the AWS Cloud Development Kit (CDK).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This example enables the following configuration:
+
+- Connect to the page source repository in GitHub
+- Enable deployment from `master` branch
+- Enable feature branch preview deployments
+- Deploy artifacts from source repository root and subfolders
+
+All this configuration is done on: `lib/aws-cdk-amplify-console-stack.ts`
+
+The sample code reads the GitHub Personal Access Token from AWS Secrets Manager. You can store the secret there, using the following CLI command:
+
+`aws secretsmanager create-secret --name github-access-token --secret-string <github-personal-access-token>`
+
+## The Stack
+
+### AWS Amplify Console
+
+> The [AWS Amplify Console](https://aws.amazon.com/amplify/console/) provides a Git-based workflow for hosting fullstack serverless web apps with continuous deployment. A fullstack serverless app consists of a backend built with cloud resources such as GraphQL or REST APIs, file and data storage, and a frontend built with single page application frameworks such as React, Angular, Vue, or Gatsby.
+>
+> AWS Amplify Console supports common Single Page App (SPA) frameworks (e.g. React, Angular, Vue.js, Ionic, Ember), as well as static-site generators like Gatsby, Eleventy, Hugo, VuePress, and Jekyll.
+
+### AWS Cloud Development Kit
+
+> The [AWS Cloud Development Kit](https://docs.aws.amazon.com/cdk/index.html) (AWS CDK) is a software development framework for defining your cloud infrastructure in code and provisioning it through AWS CloudFormation.
+
+In my example we use Typescript, and the project was inited with the command: `cdk init app --language typescript`
+
+### `aws-amplify` CDK Module
+
+In this example we use [aws-amplify CDK module](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-amplify-readme.html).
 
 ## Useful commands
 
@@ -14,5 +41,5 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `npm run watch` watch for changes and compile
 - `npm run test` perform the jest unit tests
 - `cdk deploy` deploy this stack to your default AWS account/region
-- `cdk diff` compare deployed stack with current state
+- `cdk diff` compare deployed stack with the current state
 - `cdk synth` emits the synthesized CloudFormation template
