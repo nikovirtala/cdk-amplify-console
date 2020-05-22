@@ -27,5 +27,11 @@ export class AwsCdkAmplifyConsoleStack extends cdk.Stack {
     });
 
     const master = amplifyApp.addBranch('master');
+    const dev = amplifyApp.addBranch('dev');
+
+    const domain = amplifyApp.addDomain('amplified.host');
+    domain.mapRoot(master);
+    domain.mapSubDomain(master, 'www');
+    domain.mapSubDomain(dev);
   }
 }
