@@ -1,29 +1,33 @@
 {
-  "name": "aws-cdk-amplify-console",
-  "version": "0.1.0",
+  "name": "cdk-amplify-console",
+  "version": "2.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nikovirtala/cdk-amplify-console.git"
+  },
   "bin": {
-    "aws-cdk-amplify-console": "bin/aws-cdk-amplify-console.js"
+    "cdk-amplify-console": "bin/cdk-amplify-console.js"
+  },
+  "author": {
+    "name": "Niko Virtala",
+    "email": "niko.virtala@hey.com",
+    "organization": false
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
     "cdk": "cdk"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "1.65.0",
-    "@types/jest": "^26.0.14",
-    "@types/node": "14.11.2",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.2",
-    "ts-jest": "^26.4.1",
-    "ts-node": "^9.0.0",
-    "typescript": "~4.0.3"
+    "@types/node": "14.14.35",
+    "aws-cdk": "2.0.0-alpha.6",
+    "ts-node": "^9.1.1",
+    "typescript": "~4.2.3"
   },
   "dependencies": {
-    "@aws-cdk/aws-amplify": "^1.65.0",
-    "@aws-cdk/aws-codebuild": "^1.65.0",
-    "@aws-cdk/core": "1.65.0",
+    "aws-cdk-lib": "2.0.0-alpha.6",
+    "constructs": "10.0.0-pre.5",
     "source-map-support": "^0.5.19"
   }
 }
