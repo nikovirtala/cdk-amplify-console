@@ -1,11 +1,27 @@
-name: Deploy to AWS Amplify Console
+name: Build and Synth
 
-on: [push]
-
+on:
+  pull_request: {}
+  workflow_dispatch: {}
 jobs:
   build:
-    name: Synth and Deploy
     runs-on: ubuntu-latest
+    env:
+      CI: "true"
     steps:
-      - name: Hello world
-        run: echo 'Hello world'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm ci
+      - name: Anti-tamper check
+        run: git diff --exit-code
+      - name: Set git identity
+        run: |-
+          git config user.name "Auto-bump"
+          git config user.email "github-actions@github.com"
+      - name: Build
+        run: npm run build
+      - name: Synth
+        run: npx aws-cdk@next synth
+      - name: Anti-tamper check
+        run: git diff --exit-code

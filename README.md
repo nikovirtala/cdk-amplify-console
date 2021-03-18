@@ -14,7 +14,7 @@ This example enables the following configuration:
   - `master` branch: https://amplified.host
   - `dev` branch: https://dev.amplified.host
 
-All this configuration is done on: `lib/aws-cdk-amplify-console-stack.ts`
+All this configuration is done on: `lib/cdk-amplify-console-stack.ts`
 
 The sample code reads the GitHub Personal Access Token from AWS Secrets Manager. You can store the secret there, using the following CLI command:
 
@@ -40,17 +40,16 @@ In this example we use [aws-amplify CDK module](https://docs.aws.amazon.com/cdk/
 
 ### GitHub Actions
 
-![](https://github.com/nikovirtala/aws-cdk-amplify-console/workflows/Deploy%20to%20AWS%20Amplify%20Console/badge.svg)
+![](https://github.com/nikovirtala/cdk-amplify-console/workflows/Deploy%20to%20AWS%20Amplify%20Console/badge.svg)
 
 ## To-Do
 
-- [ ] Complete the GitHub Actions workflow
+- [x] Complete the GitHub Actions workflow
 
 ## Useful commands
 
 - `npm run build` compile typescript to js
 - `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
 - `cdk deploy` deploy this stack to your default AWS account/region
 - `cdk diff` compare deployed stack with the current state
 - `cdk synth` emits the synthesized CloudFormation template
